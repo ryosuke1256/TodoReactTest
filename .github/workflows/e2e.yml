@@ -1,0 +1,35 @@
+name: End to End tests
+on:
+  push:
+    paths-ignore:
+      - 'docs/**'
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Start App
+        run: |
+          yarn install 
+          yarn build
+          yarn start &
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          wait-on: "http://localhost:3000"
+          browser: chrome
+
+      # https://github.com/cypress-io/github-action#artifacts
+      - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: Screenshots
+          path: cypress/screenshots
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: Videos
+          path: cypress/videos
