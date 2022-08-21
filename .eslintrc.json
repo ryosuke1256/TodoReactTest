@@ -1,0 +1,30 @@
+{
+  "extends": ["plugin:react/recommended", "plugin:react-hooks/recommended", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-duplicate-imports": "error",
+    "no-console": ["warn", { "allow": ["warn", "error", "info", "debug"] }],
+    "no-var": "error",
+    "default-case": ["warn", { "commentPattern": "^skip\\sdefault" }],
+    "max-params": ["error", { "max": 4 }],
+    "max-depth": ["error", { "max": 3 }]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["~", "./src"]],
+        "extensions": [".css", ".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "ignorePatterns": ["src/stories/**/*"],
+  "overrides": [
+    {
+      "files": ["src/**/*"],
+      "rules": {
+        "react/react-in-jsx-scope": "off"
+      }
+    }
+  ]
+}

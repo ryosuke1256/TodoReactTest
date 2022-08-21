@@ -1,0 +1,19 @@
+@import '~/styles/vars.css';
+
+.circleButton {
+  box-shadow: 0.2rem 0.2rem 0.3rem 0rem #ececec;
+  font-size: 1.8rem;
+  height: 3.2rem;
+  width: 3.2rem;
+  vertical-align: bottom;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.circleButton:hover {
+  opacity: 0.9;
+  box-shadow: 0.2rem 0.2rem 0.5rem 0rem #dedede;
+}

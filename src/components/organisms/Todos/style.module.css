@@ -1,0 +1,23 @@
+.todoList {
+  display: flex;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 0.07rem solid #dbdbdb;
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.3rem 0rem #ececec;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+}
+
+.todoList:hover {
+  box-shadow: 0.2rem 0.2rem 0.5rem 0rem #dedede;
+}
+
+.checkbox {
+  padding: 20px;
+}
+
+.title {
+  padding-left: 0.6rem;
+}

@@ -1,0 +1,96 @@
+{
+  "name": "todo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "build-storybook": "build-storybook -s public",
+    "prepare": "husky install",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "test": "craco test",
+    "test:e": "craco test --forceExit",
+    "test:c": "craco test --coverage --config jest.config.js",
+    "test:w": "craco test --watchAll",
+    "test:wf": "craco test --watchAll=false",
+    "type": "tsc --noEmit",
+    "eject": "craco eject",
+    "cy:open": "cypress open",
+    "staged": "run-s lint type test:wf",
+    "storybook": "start-storybook -p 6006 -s public",
+    "chromatic": "npx chromatic --project-token=ee2303b5c39c"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.49",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "clsx": "^1.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.7.4",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.4.5",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/node-logger": "^6.5.10",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "@testing-library/react-hooks": "^8.0.1",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "chromatic": "^6.7.4",
+    "cypress": "^10.6.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "prop-types": "^15.8.1",
+    "react-app-rewired": "^2.2.1",
+    "webpack": "^5.74.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "interactive": true
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "todo@0.1.0"
+}
