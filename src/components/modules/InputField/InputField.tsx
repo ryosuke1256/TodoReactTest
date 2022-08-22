@@ -12,8 +12,8 @@ type InputField = {
 export const InputField: FC<InputField> = ({ submitText, changeSubmitText, addTodo }) => {
   return (
     <div className={style.inputField}>
-      <input type='text' value={submitText} onChange={(e) => changeSubmitText(e.target.value)} className={style.input} data-test-id='inputTask' />
-      <CircleButton onClick={() => addTodo()} className={style.buttonToAdd} data-test-id='addTaskButton'>
+      <input type='text' value={submitText} onChange={(e) => changeSubmitText(e.target.value)} className={style.input} data-testid='inputTask' />
+      <CircleButton onClick={() => addTodo()} className={style.buttonToAdd} data-testid='addTaskButton'>
         +
       </CircleButton>
     </div>
