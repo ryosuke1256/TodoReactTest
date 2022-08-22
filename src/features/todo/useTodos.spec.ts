@@ -1,53 +1,62 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { useTodos } from './useTodos';
+import { INITIAL_TODOS } from '../../constants/entity';
 
-describe('addTodo', () => {
-  test('correct number of elements', () => {
+describe('changeSubmitText', () => {
+  it('correct state', () => {
+    const inputValue = 'go lunch as friend';
     const { result } = renderHook(() => useTodos());
     act(() => {
-      result.current.addTodo();
+      result.current.changeSubmitText(inputValue);
     });
 
+    expect(result.current.submitText).toBe(inputValue);
+  });
+});
+
+describe('addTodo', () => {
+  it('correct todos value', async () => {
+    const inputValue = 'go lunch as friend';
+    const { result } = renderHook(() => useTodos());
+    await act(async () => {
+      await result.current.changeSubmitText(inputValue);
+      result.current.addTodo();
+    });
     expect(result.current.todos.length).toBe(4);
+    expect(result.current.todos).toEqual([...INITIAL_TODOS, { id: 4, title: inputValue }]);
   });
 });
 
 describe('updateTodo', () => {
-  test('correct todos value', () => {
+  const existingTodoID = 3;
+  const nonExistingTodoID = 4;
+  it('correct todos value', () => {
     const { result } = renderHook(() => useTodos());
     act(() => {
-      result.current.updateTodo('updatedTitle', 3);
+      result.current.updateTodo('updatedTitle', existingTodoID);
     });
-    expect(result.current.todos).toEqual([
-      { id: 1, title: 'Apple' },
-      { id: 2, title: 'Grape' },
-      { id: 3, title: 'updatedTitle' },
-    ]);
+    expect(result.current.todos).toEqual([INITIAL_TODOS[0], INITIAL_TODOS[1], { id: 3, title: 'updatedTitle' }]);
   });
-  test('correct todos value', () => {
+  it('correct todos value', () => {
     const { result } = renderHook(() => useTodos());
     act(() => {
-      result.current.updateTodo('updatedTitle', 4);
+      result.current.updateTodo('updatedTitle', nonExistingTodoID);
     });
-    expect(result.current.todos).toEqual([
-      { id: 1, title: 'Apple' },
-      { id: 2, title: 'Grape' },
-      { id: 3, title: 'Strawberry' },
-    ]);
+    expect(result.current.todos).toEqual(INITIAL_TODOS);
   });
 });
 
 describe('deleteTodo', () => {
   const existingTodoID = 3;
-  const nonExistingTodoID = 100;
-  test('correct number of elements', () => {
+  const nonExistingTodoID = 4;
+  it('correct number of elements', () => {
     const { result } = renderHook(() => useTodos());
     act(() => {
       result.current.deleteTodo(existingTodoID);
     });
     expect(result.current.todos.length).toBe(2);
   });
-  test('correct number of elements', () => {
+  it('correct number of elements', () => {
     const { result } = renderHook(() => useTodos());
     act(() => {
       result.current.deleteTodo(nonExistingTodoID);
