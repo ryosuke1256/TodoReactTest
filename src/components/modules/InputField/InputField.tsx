@@ -13,9 +13,7 @@ export const InputField: FC<InputField> = ({ submitText, changeSubmitText, addTo
   return (
     <div className={style.inputField}>
       <input type='text' value={submitText} onChange={(e) => changeSubmitText(e.target.value)} className={style.input} data-testid='inputTask' />
-      <CircleButton onClick={() => addTodo()} className={style.buttonToAdd} data-testid='addTaskButton'>
-        +
-      </CircleButton>
+      <CircleButton onClick={() => addTodo()} className={style.buttonToAdd} data-testid='addTaskButton' />
     </div>
   );
 };
