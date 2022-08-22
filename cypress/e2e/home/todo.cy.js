@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { INITIAL_TODOS } from '../../../src/constants/entity';
+import { INITIAL_TODOS } from '~/constants/entity';
 
 describe('test todo crud operation', () => {
   beforeEach(() => {
@@ -15,7 +15,7 @@ describe('test todo crud operation', () => {
     cy.get('[data-testid="addTaskButton"]').click();
     cy.get('[data-testid="todoList"]').should('have.length', 4).last().should('have.text', newItem);
   });
-  it('can delete todo', () => {
+  it('can delete item', () => {
     cy.get('[data-testid="todoCheckbox"]').eq(1).click();
     cy.get('[data-testid="todoList"]').should('have.length', 2);
     cy.get('[data-testid="todoList"]').first().contains(INITIAL_TODOS[0].title)
