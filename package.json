@@ -16,10 +16,10 @@
     "test:wf": "craco test --watchAll=false",
     "type": "tsc --noEmit",
     "eject": "craco eject",
-    "cy:open": "cypress open",
+    "cy:open": "cypress open --config-file=cypress.config.ts",
     "staged": "run-s lint type test:wf",
     "storybook": "start-storybook -p 6006 -s public",
-    "chromatic": "npx chromatic --project-token=ee2303b5c39c"
+    "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
