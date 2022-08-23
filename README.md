@@ -1,33 +1,23 @@
-`yarn run test -w --clearCache`
-`yarn run test -w --silent false `
-`yarn run cypress open --config-file=cypress.config.ts`
+[![End to End tests](https://github.com/ryosuke1256/Todo/actions/workflows/e2e.yml/badge.svg?branch=main)](https://github.com/ryosuke1256/Todo/actions/workflows/e2e.yml)
 
-#### Usage
-- `yarn install`
-- `yarn start`
+## About
 
-#### TODO
-- storybook/testing
-- CSS Modules 
-- Djangoやる？
+This is a Todo application. It is created with react.
 
-#### Rule
+## Purpose of Creation
+
+To study the technologies listed below
+
 - TDD(Test Driven Development)
+- E2E test(Cypress)
+- CSS Modules
+- UI Test(Chromatic with Storybook)
 
-#### Unit,Intergration,Feature
-- Jest
+## Usage
 
-#### Visual Digression Test
-- https://www.chromatic.com/
+`yarn install`  
+`yarn start`
 
-#### Interaction tests
-- 
+## May create in the future
 
-#### E2E
-- Cypress
-
-#### Next.js(また今度)
-- Docker
-- Redis(Repository)
-- next-session
-
+Create a backend in django
