@@ -10,10 +10,10 @@ type TodoListProps = {
 
 export const TodoList: React.FC<TodoListProps> = ({ title, todoID, updateTodo, deleteTodo }) => {
   return (
-    <label htmlFor={`hoge${todoID}`}>
+    <label htmlFor={`todo${todoID}`}>
       <li className={style.todoList} data-testid='todoList'>
         <input type='checkbox' onClick={() => deleteTodo(todoID)} className={style.checkbox} data-testid='todoCheckbox' />
-        <input type='text' value={title} onChange={(e) => updateTodo(e.target.value, todoID)} id={`hoge${todoID}`} className={style.todoTitle} data-testid='todoTitle' />
+        <input type='text' value={title} onChange={(e) => updateTodo(e.target.value, todoID)} id={`todo${todoID}`} className={style.todoTitle} data-testid='todoTitle' />
       </li>
     </label>
   );
