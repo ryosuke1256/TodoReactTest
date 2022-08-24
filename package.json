@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@craco/craco": "^6.4.5",
-    "@cypress/code-coverage": "^3.10.0",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-interactions": "^6.5.10",
@@ -53,13 +52,10 @@
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/react-hooks": "^8.0.1",
-    "babel-plugin-istanbul": "^6.1.1",
     "babel-plugin-named-exports-order": "^0.0.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
     "chromatic": "^6.7.4",
     "cypress": "^10.6.0",
     "eslint-import-resolver-alias": "^1.1.2",
-    "nyc": "^15.1.0",
     "prop-types": "^15.8.1",
     "react-app-rewired": "^2.2.1",
     "webpack": "^5.74.0"
