@@ -15,7 +15,13 @@ describe('test todo crud operation', () => {
     cy.get('[data-testid="addTaskButton"]').click();
     cy.get('[data-testid="todoList"]').should('have.length', 4).last().find('[data-testid="todoTitle"]').should('have.value', newItem);
   });
-  it('can delete item', () => {
+  it('can update todo item', () => {
+    const taskToUpdate = 'Good Afternoon!';
+    cy.get('[data-testid="todoList"]').eq(1).click();
+    cy.get('[data-testid="todoTitle"]').eq(1).clear().type(taskToUpdate);
+    cy.get('[data-testid="todoList"]').should('have.length', 3).eq(1).find('[data-testid="todoTitle"]').should('have.value', taskToUpdate);
+  });
+  it('can delete todo item', () => {
     cy.get('[data-testid="todoCheckbox"]').eq(1).click();
     cy.get('[data-testid="todoList"]').should('have.length', 2);
     cy.get('[data-testid="todoList"]').first().find('[data-testid="todoTitle"]').should('have.value', INITIAL_TODOS[0].title);
