@@ -1,3 +1,5 @@
+@import url('~/styles/vars.css');
+
 .todoList {
   display: flex;
   max-width: 40rem;
@@ -20,4 +22,8 @@
 
 .title {
   padding-left: 0.6rem;
+  border: none;
+  font-size: inherit;
+  outline: none;
+  caret-color: var(--color-primary);
 }
