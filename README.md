@@ -1,23 +1,29 @@
 [![End to End tests](https://github.com/ryosuke1256/Todo/actions/workflows/e2e.yml/badge.svg?branch=main)](https://github.com/ryosuke1256/Todo/actions/workflows/e2e.yml)
 
-## About
+# About
 
-This is a Todo application. It is created with react.
-
-## Purpose of Creation
-
-To study the technologies listed below
-
-- TDD(Test Driven Development)
-- E2E test(Cypress)
-- CSS Modules
-- UI Test(Chromatic with Storybook)
+This is a Todo application created with React
 
 ## Usage
 
-`yarn install`  
-`yarn start`
+To get started, follow these steps:
 
-## May create in the future
+1. Install the required dependencies: `yarn install`
+2. Start the application: `yarn start`
 
-Create a backend in django
+## Development Workflow
+
+- Test Driven Development (TDD)
+
+## Testing Tools
+
+We use the following testing tools:
+
+- UI Testing: Chromatic with Storybook
+- End-to-End Testing: Cypress
+- Integration Testing: Jest
+- Unit Testing: Jest
+
+## Future Plans
+
+We may consider creating a backend for this application using Django
