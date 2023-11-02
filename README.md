@@ -2,11 +2,9 @@
 
 # About
 
-This is a Todo application created with React
+The functionality of this Todo app is minimal, and the design is simple. It uses React and TypeScript as the technologies. Various levels of automated tests, following the test pyramid, are integrated into the workflow and executed
 
 ## Usage
-
-To get started, follow these steps:
 
 1. Install the required dependencies: `yarn install`
 2. Start the application: `yarn start`
@@ -24,6 +22,17 @@ We use the following testing tools:
 - Integration Testing: Jest,　React Hooks Testing Library
 - Unit Testing: Jest
 - Static analysis: Eslint, TypeScript
+
+## Hooks
+
+We employ Git hooks to enhance our development process:
+
+- Local Development: We use Husky to set up and manage Git hooks locally
+- Remote Integration: For remote integration, we rely on GitHub Actions for automated workflows
+
+## Design System
+
+We adopt the Atomic Design methodology for organizing our design system, and we use Storybook as our design system tool
 
 ## Future Plans
 
