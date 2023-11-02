@@ -21,8 +21,9 @@ We use the following testing tools:
 
 - UI Testing: Chromatic with Storybook
 - End-to-End Testing: Cypress
-- Integration Testing: Jest
+- Integration Testing: Jest,　React Hooks Testing Library
 - Unit Testing: Jest
+- Static analysis: Eslint, TypeScript
 
 ## Future Plans
 
